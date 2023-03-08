@@ -62,7 +62,8 @@ class Forth {
                         -1 -> throw Exception("empty stack")
                         0 -> throw Exception("only one value on the stack")
                     }
-                    val (lastElement, lastMinusOneElement) = this.stack.takeLast(2)
+                    val lastElement: Int = this.stack[lastIndex];
+                    val lastMinusOneElement: Int = this.stack[lastIndex - 1];
                     if (it == "/" && (lastElement == 0 || lastMinusOneElement == 0)) {
                         throw Exception("divide by zero")
                     }
